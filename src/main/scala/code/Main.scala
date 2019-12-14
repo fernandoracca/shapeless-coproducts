@@ -2,8 +2,7 @@ package code
 
 import shapeless._
 import shapeless.ops.coproduct._
-object Main extends App {
-  // Code goes here
+object Main  {
 
   case class A()
   case class B()
@@ -11,5 +10,10 @@ object Main extends App {
   case class D()
 
   type ABC = A :+: B :+: C :+: D :+: CNil
+
+  def main(args: Array[String]): Unit = {
+    val x: ABC = Inr(Inl(B()))
+    println(x)
+  }
 
 }
